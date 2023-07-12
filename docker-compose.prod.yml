@@ -6,3 +6,5 @@ services:
       dockerfile: Dockerfile.prod
     ports:  
       - 6000:80
+
+
