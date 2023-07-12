@@ -12,8 +12,10 @@ tasks:
       docker-compose -f docker-compose.yml logs -f;
 
   - name: backend
-    init: cd ../backend
-    command: 
+    command:
+      cd ../backend;
+      npm i;
+      npm i -g @nestjs/cli;
       docker-compose -f docker-compose.yml build;
       docker-compose -f docker-compose.yml up -d;
       docker-compose -f docker-compose.yml logs -f;
