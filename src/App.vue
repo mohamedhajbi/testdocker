@@ -1,12 +1,15 @@
 <script setup>
-import {ref, onMounted, computed, watch} from 'vue'
+
 </script>
 
-const todos = ref([])
-const name = ref('')
+
 
 <template>
- 
-
-
+    <section>
+        <div class="contaienr">
+            <h1>
+                hello!
+            </h1>
+        </div>
+    </section>
 </template>
