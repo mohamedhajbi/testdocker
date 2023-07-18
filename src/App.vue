@@ -25,6 +25,7 @@ export default {
         console.log('aaaaaaaaaaa');
        await service.products.productsControllerGetAllProducts().then((res)=> {
           console.log('aaaaaaaa', res?.data);
+          this.products = res?.data
         })
       } catch (error) {
         this.error = error.message;
