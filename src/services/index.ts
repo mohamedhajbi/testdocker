@@ -1,8 +1,10 @@
 // import { getCookieByName } from '../constants';
 import { Api } from './myApi';
+console.log('aaaaaaaaaaaaaa', import.meta.env.VITE_MY_URL);
 
 const service = new Api({
-    baseUrl: 'https://3000-mohamedhajbi-testdocker-ztxgmkugbki.ws-eu101.gitpod.io',
+    //baseUrl: 'https://3000-mohamedhajbi-testdocker-f1ekzqi78rz.ws-eu101.gitpod.io',
+    baseUrl: import.meta.env.VITE_MY_URL,
     baseApiParams: {
         headers: {
             // 'Content-Type': 'application/json',
