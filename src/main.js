@@ -1,6 +1,18 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { createApp } from 'vue';
+import App from './App.vue';
+import FormComponent from './Form.vue';
+import HomeComponent from './Home.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
-import './main.css'
 
-createApp(App).mount('#app')
+const routes = [ 
+  { path: '/', component: HomeComponent}, 
+  { path: '/form', component: FormComponent}, 
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+createApp(App).use(router).mount('#app');
