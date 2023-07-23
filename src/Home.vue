@@ -22,9 +22,8 @@
               <td>{{ product.price }}</td>
             <td class="d-flex">
               <button @click="updatePost(post)" class="btn btn-primary">Update</button>
-              <button @click="updatePost(post)" class="btn btn-danger ms-2">Delete</button>
-              
-            </td>
+              <button @click="deleteProduct(product.id)" class="btn btn-danger ms-2">Delete</button>
+          </td>              
           </tr>
         </tbody>
       </table>
@@ -42,7 +41,7 @@
       };
     },
     methods: {
-      async fetchPost() {
+      async fetchProd() {
         try {
           const response = await service.products.productsControllerGetAllProducts().then((res)=>{
             console.log('aaaaaaaa',res)
@@ -53,9 +52,19 @@
           console.log('error', error);
         }
       },
+      async deleteProduct(productId) {
+      try {
+        await service.products.productsControllerDeleteProduct(productId).then((res) => {
+          console.log('Deleted product:', res);
+          this.products = this.products.filter((product) => product.id !== productId);
+        });
+      } catch (error) {
+        console.log('Error deleting product:', error);
+      }
     },
+  },
     async mounted() {
-      await this.fetchPost();
+      await this.fetchProd();
     },
   };
   </script>

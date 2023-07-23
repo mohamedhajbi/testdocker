@@ -37,9 +37,14 @@
     },
     methods: {
       async addProduct() {
+        if (!this.newProduct.title || !this.newProduct.description) {
+        alert("Please fill in all the required fields.");
+        return; 
+      }
         try {
           const response = await service.products.productsControllerAddProduct(this.newProduct);
           console.log("response", response);
+          alert("Porduct added")
           this.products.push(response.data); 
           this.newProduct.title = "";
           this.newProduct.description = "";
