@@ -21,7 +21,7 @@
               <td style="word-break: break-all;">{{ product.description }}</td>
               <td>{{ product.price }}</td>
             <td class="d-flex">
-              <button @click="updatePost(post)" class="btn btn-primary">Update</button>
+              <router-link :to="'/update/' + product.id" class="btn btn-primary">Update</router-link>
               <button @click="deleteProduct(product.id)" class="btn btn-danger ms-2">Delete</button>
           </td>              
           </tr>
