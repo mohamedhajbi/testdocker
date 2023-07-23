@@ -1,5 +1,10 @@
 <template>
     <div class="container mt-4">
+      <div class="d-flex justify-content-start mb-3">
+        <router-link to="/" class="btn border ms-16">
+          &#8592; back
+        </router-link>
+      </div>
       <div class="form-group">
         <label for="title">Title</label>
         <input v-model="newProduct.title" type="text" class="form-control" id="title">
